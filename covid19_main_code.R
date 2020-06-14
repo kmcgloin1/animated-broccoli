@@ -5,7 +5,6 @@ library(ggplot2)
 library(scales)
 library(ggpubr)
 library(nlme)
-library(forecast)
 library(gam)
 library(splines)
 
