@@ -1,6 +1,3 @@
-# ----- STA 5900: Final Project - The Spread of COVID-19 in the United States -----
-# Written by: Kaitlyn McGloin
-
 library(ggplot2)
 library(scales)
 library(ggpubr)
@@ -9,8 +6,6 @@ library(gam)
 library(splines)
 
 # ----- UNITED STATE'S ANALYSIS -----
-
-setwd("C:/Users/Kaitlyn/Desktop/COVID-19")
 
 corona_nyt_us <- read.csv("corona_us.csv")
 
