@@ -45,9 +45,7 @@ lines(xs,log_model,col="lightsteelblue",lwd=3)
 
 # ----- SPLINES -----
 
-# want to predict mpg using weight, but relationship may be nonlinear;
-# will choose 3 points for the step height to change in a step function approx:
-# note that 2.5,3.5,4.5 are the (interior) knots:
+# create spline breaks
 breaks <- c(0,55,70,90,105)
 
 # create a discrete/categorical/factor version of weight:
@@ -142,9 +140,7 @@ lines(xs,log_model,col="lightsteelblue",lwd=3)
 
 # ----- SPLINES -----
 
-# want to predict mpg using weight, but relationship may be nonlinear;
-# will choose 3 points for the step height to change in a step function approx:
-# note that 2.5,3.5,4.5 are the (interior) knots:
+# create spline breaks
 breaks <- c(0,55,70,90,105)
 
 # create a discrete/categorical/factor version of weight:
@@ -243,9 +239,6 @@ summary(lm.b)
 # create y values for plotting:
 lm.b.pred <- predict(lm.b,newdata=data.frame(xt1=xs,xt2=pp(xs-63),xt3=pp(xs-80)))
 lines(xs,ys,col="blue",lwd=3)
-
-
-
 
 
 # ----- GAM -----
@@ -389,7 +382,6 @@ cal_case_model3 <- ggplot(corona_california, aes(x = day, y = cases)) +
 
 # ----- MODEL FITTING FOR CALIFORNIA COVID-19 DEATHS -----
 
-
 # ----- NONLINEAR REGRESSION -----
 attach(corona_california)
 
@@ -486,7 +478,6 @@ corona_oklahoma$deaths <- prepend(corona_oklahoma$cum_deaths[-1] - corona_oklaho
 attach(corona_oklahoma)
 
 # ----- MODEL FITTING FOR OKLAHOMA COVID-19 CASES -----
-
 
 # ----- NONLINEAR REGRESSION -----
 
@@ -813,15 +804,6 @@ ny_case_model3 <- ggplot(corona_ny, aes(x = day, y = deaths)) +
         axis.text.x = element_text(angle=0, hjust=1))
 
 
-
-
-
-
-
-
-
-
- 
 # ----- TIME SERIES ANALYSIS -----
 
 # This would only be used if I decide to use cumulative cases instead of new cases
@@ -835,10 +817,6 @@ time_plot <- ggplot(corona_nyt_us, aes(x = date, y = cum_cases)) + geom_line() +
     geom_line() +
     geom_smooth(method = "loess", se = FALSE, span = 0.6) +
     theme_classic())
-
-
-
-
 
 
 
